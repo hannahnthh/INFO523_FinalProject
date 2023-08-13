@@ -34,11 +34,6 @@ acf(his_train$Enrolled)
 adf_test_enrolled <- adf.test(his_train$Enrolled)
 print(adf_test_enrolled)
 
-# Generate diagnostic plots, including the ACF and PACF of residuals, histogram of residuals, and a Q-Q plot.
-model_diagnostics <- forecast:::tsdisplay(residuals(model), lag.max = 20, main = "Model Diagnostics")
-
-# Display the diagnostic plots
-print(model_diagnostics)
 # Create ARIMA models for enrollment
 model <- auto.arima(his_train$Enrolled)
 summary(model)
